@@ -75,8 +75,8 @@ function Dgdpf(dgdu,u_vec,pf,P,Pf,β,η,flag_t,flag_f,ϵ1,ϵ2,μ,σs,k,LHp,LHn,d
       
       uh = FEFunction(U,u_vec)
       λh = FEFunction(V,conj(λ_vec))
-      l_temp(dp) = ∫(dG(pfh,uh,λh,dp,ϵ1,ϵ2,k,β,η,flag_t))*dΩ
-      dgdpf = assemble_vector(l_temp,P)
+      l_tempf(dp) = ∫(dG(pfh,uh,λh,dp,ϵ1,ϵ2,k,β,η,flag_t))*dΩ
+      dgdpf = assemble_vector(l_tempf,P)
       return dgdpf
   end
 end
